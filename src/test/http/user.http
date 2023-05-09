@@ -1,0 +1,20 @@
+### Create user
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName":"John",
+  "lastName":"Doe",
+  "age":18,
+  "email":"john.doe@gmail.com",
+  "password":"John1"
+}
+
+### Get all users
+GET http://localhost:8080/shop/users/
+
+### Get by ID
+GET http://localhost:8080/shop/users/1
+
+### Delete user
+DELETE http://localhost:8080/shop/users/1

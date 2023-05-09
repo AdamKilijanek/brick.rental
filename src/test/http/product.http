@@ -1,0 +1,30 @@
+### Create Product
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "category":,
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+### Update Product
+PUT http://localhost:8080/shop/products/1
+Content-Type: application/json
+
+{
+  "category":,
+  "number": "42199",
+  "elements": 1999,
+  "price": 100.00
+}
+
+### Get by ID
+GET http://localhost:8080/shop/products/1
+
+### Get all products
+GET http://localhost:8080/shop/products/
+
+### Delete product
+DELETE http://localhost:8080/shop/products/1
