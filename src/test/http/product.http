@@ -3,7 +3,9 @@ POST http://localhost:8080/shop/products
 Content-Type: application/json
 
 {
-  "category":,
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
   "number": "42199",
   "elements": 1999,
   "price": 199.99
@@ -14,13 +16,16 @@ PUT http://localhost:8080/shop/products/1
 Content-Type: application/json
 
 {
-  "category":,
+  "id": 1,
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
   "number": "42199",
   "elements": 1999,
   "price": 100.00
 }
 
-### Get by ID
+### Get product by ID
 GET http://localhost:8080/shop/products/1
 
 ### Get all products

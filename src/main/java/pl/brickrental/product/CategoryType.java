@@ -1,4 +1,4 @@
-package pl.brickrental.category;
+package pl.brickrental.product;
 
 public enum CategoryType {
 

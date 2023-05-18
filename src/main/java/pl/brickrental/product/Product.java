@@ -1,11 +1,9 @@
 package pl.brickrental.product;
 
 import lombok.*;
-import pl.brickrental.category.Category;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @NoArgsConstructor
@@ -22,7 +20,14 @@ public class Product {
     private Long id;
     @OneToOne
     private Category category;
+    @NotNull
     private String number;
+    @NotNull
     private int elements;
+    @NotNull
     private double price;
+
+    public static Product convert(ProductDTO productDTO){
+        return new Product(productDTO.id(), Category.convert(productDTO.categoryDTO()), productDTO.number(), productDTO.elements(), productDTO.price());
+    }
 }

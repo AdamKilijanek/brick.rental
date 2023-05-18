@@ -1,8 +1,8 @@
 package pl.brickrental.product;
 
-import pl.brickrental.category.Category;
+public record ProductDTO(Long id, CategoryDTO categoryDTO, String number, int elements, double price) {
 
-import javax.persistence.OneToOne;
-
-public record ProductDTO(Long id, @OneToOne Category category, String number, int elements, double price) {
+    public static ProductDTO convert(Product product){
+        return new ProductDTO(product.getId(), CategoryDTO.convert(product.getCategory()), product.getNumber(), product.getElements(), product.getPrice());
+    }
 }

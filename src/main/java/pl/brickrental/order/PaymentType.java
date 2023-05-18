@@ -1,6 +1,6 @@
-package pl.brickrental.payment;
+package pl.brickrental.order;
 
-public enum PaymentMethod {
+public enum PaymentType {
 
     TRANSFER,
     FAST_TRANSFER,

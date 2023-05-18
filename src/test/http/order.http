@@ -1,0 +1,65 @@
+### Create Order
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTO":{
+    "id": 1,
+    "categoryDTO": {
+      "type": "TECHNIC"
+    },
+    "number": "42199",
+    "elements": 1999,
+    "price": 100.00
+  },
+  "rentTime": 7,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+### Update order
+PUT http://localhost:8080/shop/orders/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTO":{
+    "id": 1,
+    "categoryDTO": {
+      "type": "TECHNIC"
+    },
+    "number": "42199",
+    "elements": 1999,
+    "price": 100.00
+  },
+  "rentTime": 14,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+### Get order by id
+GET http://localhost:8080/shop/orders/2
+
+### Get all orders
+GET http://localhost:8080/shop/orders/
+
+### Delete order
+DELETE http://localhost:8080/shop/orders/2

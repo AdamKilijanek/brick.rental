@@ -11,35 +11,45 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
 
+    private final CategoryRepository categoryRepository;
+
     @Override
     public List<ProductDTO> listAllProducts() {
-        return productRepository.findAll().stream().map(this::convert).toList();
+        return productRepository.findAll().stream().map(ProductDTO::convert).toList();
     }
 
     @Override
-    public ProductDTO createProduct(ProductDTO product) {
-        Product entity = productRepository.save(convert(product));
-        return convert(entity);
+    public ProductDTO createProduct(ProductDTO productDTO) {
+        Category category = categoryRepository.findByType(productDTO.categoryDTO().type())
+                .orElseThrow(
+                        () -> new IllegalArgumentException("No category with type " + productDTO.categoryDTO().type()));
+        Product product = Product.convert(productDTO);
+        product.setCategory(category);
+        Product entity = productRepository.save(product);
+        return ProductDTO.convert(entity);
     }
 
     @Override
     public ProductDTO getById(Long id) {
-        return productRepository.findById(id).map(this::convert).orElseThrow(() -> new RuntimeException("No product with id =" + id));
+        return productRepository.findById(id).map(ProductDTO::convert).orElseThrow(() -> new RuntimeException("No product with id =" + id));
     }
 
     @Override
     public ProductDTO updateProduct(ProductDTO productDTO) {
+        Category category = categoryRepository.findByType(productDTO.categoryDTO().type())
+                .orElseThrow(
+                        () -> new IllegalArgumentException("No category with type " + productDTO.categoryDTO().type()));
         return productRepository.findById(productDTO.id())
                 .map(product -> {
-                    product.setCategory(productDTO.category());
+                    product.setCategory(category);
                     product.setNumber(productDTO.number());
                     product.setElements(productDTO.elements());
                     product.setPrice(productDTO.price());
                     return product;
                 })
                 .map(productRepository::save)
-                .map(this::convert)
-                .orElseThrow(()-> new RuntimeException("No product with id = " + productDTO.id()));
+                .map(ProductDTO::convert)
+                .orElseThrow(() -> new RuntimeException("No product with id = " + productDTO.id()));
     }
 
     @Override
@@ -47,11 +57,4 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
-    private ProductDTO convert(Product product){
-        return new ProductDTO(product.getId(), product.getCategory(), product.getNumber(), product.getElements(), product.getPrice());
-    }
-
-    private Product convert(ProductDTO productDTO){
-        return new Product(productDTO.id(), productDTO.category(), productDTO.number(), productDTO.elements(), productDTO.price());
-    }
 }

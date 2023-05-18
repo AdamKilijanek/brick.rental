@@ -18,21 +18,20 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
     @NotBlank
     private String firstName;
-    @NotNull
     @NotBlank
     private String lastName;
-    @NotNull
-    @NotBlank
     @Min(18)
     private int age;
-    @NotNull
     @NotBlank
     @Email
     private String email;
-    @NotNull
     @NotBlank
     private String password;
+
+
+   public static User convert(UserDTO userDTO) {
+        return new User(userDTO.id(), userDTO.firstName(), userDTO.lastName(), userDTO.age(), userDTO.email(), userDTO.password());
+    }
 }

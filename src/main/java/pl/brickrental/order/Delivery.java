@@ -1,4 +1,4 @@
-package pl.brickrental.category;
+package pl.brickrental.order;
 
 import lombok.*;
 
@@ -11,12 +11,15 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@Table(name = "categories")
-public class Category {
-
+@Table(name = "deliveries")
+public class Delivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
-    private CategoryType type;
+    private DeliveryType type;
+
+    public static Delivery convert(DeliveryDTO deliveryDTO){
+        return new Delivery(deliveryDTO.id(), deliveryDTO.type());
+    }
 }

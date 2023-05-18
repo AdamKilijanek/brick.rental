@@ -17,11 +17,6 @@ public class UserController {
         return userService.getById(id);
     }
 
-    @PutMapping("/{id}")
-    public UserDTO updateUser(@RequestBody UserDTO user) {
-        return userService.updateUser(user);
-    }
-
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {
         userService.deleteById(id);
