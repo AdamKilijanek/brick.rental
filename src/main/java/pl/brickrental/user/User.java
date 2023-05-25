@@ -3,7 +3,9 @@ package pl.brickrental.user;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @NoArgsConstructor
@@ -31,7 +33,7 @@ public class User {
     private String password;
 
 
-   public static User convert(UserDTO userDTO) {
+    public static User convert(UserDTO userDTO) {
         return new User(userDTO.id(), userDTO.firstName(), userDTO.lastName(), userDTO.age(), userDTO.email(), userDTO.password());
     }
 }

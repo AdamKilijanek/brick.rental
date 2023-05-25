@@ -2,15 +2,12 @@ package pl.brickrental.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-
-    Optional<User> findByFirstName(String firstName);
-
-    Optional<User> findByLastName(String lastName);
+interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByEmail(String email);
 
-    Optional<User> findAllByAgeIsGreaterThanEqual(int age);
+    List<User> findAllByAgeIsGreaterThan(int age);
 }

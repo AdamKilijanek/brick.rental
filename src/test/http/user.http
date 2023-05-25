@@ -3,11 +3,35 @@ POST http://localhost:8080/shop/users
 Content-Type: application/json
 
 {
-  "firstName":"John",
-  "lastName":"Doe",
-  "age":18,
-  "email":"john.doe@gmail.com",
-  "password":"John1"
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 18,
+  "email": "john.doe@gmail.com",
+  "password": "John1"
+}
+
+### Create user with age grater than 20
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John2",
+  "lastName": "Doe2",
+  "age": 21,
+  "email": "john2.doe@gmail.com",
+  "password": "John2"
+}
+
+### Create user with age grater than 25
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John3",
+  "lastName": "Doe3",
+  "age": 26,
+  "email": "john3.doe@gmail.com",
+  "password": "John3"
 }
 
 ### Get all users
@@ -18,3 +42,6 @@ GET http://localhost:8080/shop/users/1
 
 ### Delete user
 DELETE http://localhost:8080/shop/users/1
+
+### Get all users where age is greater than 20
+GET http://localhost:8080/shop/users/greaterThan/20

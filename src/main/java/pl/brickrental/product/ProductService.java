@@ -13,4 +13,6 @@ public interface ProductService {
     ProductDTO updateProduct(ProductDTO productDTO);
 
     void deleteById(Long id);
+
+    List<ProductDTO> findAllByIdIn(List<Long> ids);
 }

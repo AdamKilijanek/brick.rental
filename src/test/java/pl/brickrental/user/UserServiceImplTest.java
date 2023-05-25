@@ -47,17 +47,11 @@ class UserServiceImplTest {
     }
 
     @Test
-    public void givenUser_whenFindBiId_thenFindUser() {
+    public void givenUser_whenFindById_thenFindUser() {
         Mockito.when(userRepository.findById(1L)).thenReturn(Optional.of(new User(1L, "John", "Doe", 18, "john.doe@gmail.com", "John1")));
 
         UserDTO actual = userService.getById(1L);
         assertEquals(1L, actual.id());
+        assertEquals(UserDTO.class, actual.getClass());
     }
-//    @Test
-//    public void giveUser_whenFindById_thenDeleteUser(){
-//        Mockito.when(userRepository.findById(1L)).thenReturn(Optional.of(new User(1L, "John", "Doe", 18, "john.doe@gmail.com", "John1"))).thenReturn(null);
-//
-//        UserDTO actual = userService.deleteById(1L);
-//
-//    }
 }

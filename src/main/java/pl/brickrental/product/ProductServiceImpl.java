@@ -57,4 +57,9 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
+    @Override
+    public List<ProductDTO> findAllByIdIn(List<Long> ids) {
+        return productRepository.findAllByIdIn(ids).stream().map(ProductDTO::convert).toList();
+    }
+
 }

@@ -1,4 +1,4 @@
-### Create Order
+### Create Order with one product
 POST http://localhost:8080/shop/orders
 Content-Type: application/json
 
@@ -6,16 +6,123 @@ Content-Type: application/json
   "userDTO": {
     "email": "john.doe@gmail.com"
   },
-  "productDTO":{
-    "id": 1,
-    "categoryDTO": {
-      "type": "TECHNIC"
-    },
-    "number": "42199",
-    "elements": 1999,
-    "price": 100.00
-  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    }
+  ],
   "rentTime": 7,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+### Create Order with two products
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    },
+    {
+      "id": 2,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    }
+  ],
+  "rentTime": 21,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+### Create Order with five products
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    },
+    {
+      "id": 2,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 3,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 4,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 5,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    }
+  ],
+  "rentTime": 14,
   "deliveryDTO": {
     "id": 1,
     "type": "POST"
@@ -35,7 +142,7 @@ Content-Type: application/json
   "userDTO": {
     "email": "john.doe@gmail.com"
   },
-  "productDTO":{
+  "productDTOList": [{
     "id": 1,
     "categoryDTO": {
       "type": "TECHNIC"
@@ -43,7 +150,7 @@ Content-Type: application/json
     "number": "42199",
     "elements": 1999,
     "price": 100.00
-  },
+  }],
   "rentTime": 14,
   "deliveryDTO": {
     "id": 1,
@@ -63,3 +170,6 @@ GET http://localhost:8080/shop/orders/
 
 ### Delete order
 DELETE http://localhost:8080/shop/orders/2
+
+### Get order sorted by rent time
+GET http://localhost:8080/shop/orders/sorted?sort=rentTime,DESC

@@ -11,4 +11,8 @@ public interface UserService {
     UserDTO getById(Long id);
 
     void deleteById(Long id);
+
+    UserDTO findByEmail(String email);
+
+    List<UserDTO> findAllByAgeIsGreaterThan(int age);
 }

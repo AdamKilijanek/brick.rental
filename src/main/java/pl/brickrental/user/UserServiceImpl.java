@@ -17,8 +17,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDTO createUser(UserDTO user) {
-        User entity = userRepository.save(User.convert(user));
+    public UserDTO createUser(UserDTO userDTO) {
+        User entity = userRepository.save(User.convert(userDTO));
         return UserDTO.convert(entity);
     }
 
@@ -35,6 +35,14 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
+    @Override
+    public UserDTO findByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .map(UserDTO::convert)
+                .orElseThrow(() -> new RuntimeException("No user with email = " + email));
+    }
 
-
+    public List<UserDTO> findAllByAgeIsGreaterThan(int age) {
+        return userRepository.findAllByAgeIsGreaterThan(age).stream().map(UserDTO::convert).toList();
+    }
 }

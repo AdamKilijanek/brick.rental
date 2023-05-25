@@ -19,7 +19,7 @@ public class Delivery {
     @Enumerated(EnumType.STRING)
     private DeliveryType type;
 
-    public static Delivery convert(DeliveryDTO deliveryDTO){
+    public static Delivery convert(DeliveryDTO deliveryDTO) {
         return new Delivery(deliveryDTO.id(), deliveryDTO.type());
     }
 }

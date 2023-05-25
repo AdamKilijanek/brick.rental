@@ -20,7 +20,7 @@ public class Category {
     @Enumerated(EnumType.STRING)
     private CategoryType type;
 
-    public static Category convert(CategoryDTO categoryDTO){
+    public static Category convert(CategoryDTO categoryDTO) {
         return new Category(categoryDTO.id(), categoryDTO.type());
     }
 }

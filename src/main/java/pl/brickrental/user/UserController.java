@@ -23,11 +23,18 @@ public class UserController {
     }
 
     @PostMapping
-    public UserDTO createUser(@RequestBody UserDTO user) {
-        return userService.createUser(user);
+    public UserDTO createUser(@RequestBody UserDTO userDTO) {
+        return userService.createUser(userDTO);
     }
+
     @GetMapping("/")
-    public List<UserDTO> getAllUsers(){
+    public List<UserDTO> getAllUsers() {
         return userService.listAllUsers();
+    }
+
+
+    @GetMapping("/greaterThan/{age}")
+    public List<UserDTO> findAllByAgeIsGreaterThan(@PathVariable int age) {
+        return userService.findAllByAgeIsGreaterThan(age);
     }
 }
