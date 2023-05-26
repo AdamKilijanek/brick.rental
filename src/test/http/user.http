@@ -43,5 +43,8 @@ GET http://localhost:8080/shop/users/1
 ### Delete user
 DELETE http://localhost:8080/shop/users/1
 
+### Get user by email
+GET http://localhost:8080/shop/users/email/john.doe@gmail.com
+
 ### Get all users where age is greater than 20
 GET http://localhost:8080/shop/users/greaterThan/20

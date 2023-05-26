@@ -32,6 +32,10 @@ public class UserController {
         return userService.listAllUsers();
     }
 
+    @GetMapping("/email/{email}")
+    public UserDTO findByEmail(@PathVariable String email) {
+        return userService.findByEmail(email);
+    }
 
     @GetMapping("/greaterThan/{age}")
     public List<UserDTO> findAllByAgeIsGreaterThan(@PathVariable int age) {

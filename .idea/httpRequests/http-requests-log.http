@@ -1,0 +1,798 @@
+GET http://localhost:8080/shop/orders/sorted?sort=rentTime,DESC
+
+<> 2023-05-26T150441.200.json
+
+###
+
+GET http://localhost:8080/shop/orders/
+
+<> 2023-05-26T150433.200.json
+
+###
+
+GET http://localhost:8080/shop/orders/2
+
+<> 2023-05-26T150429.200.json
+
+###
+
+PUT http://localhost:8080/shop/orders/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [{
+    "id": 1,
+    "categoryDTO": {
+      "type": "TECHNIC"
+    },
+    "number": "42199",
+    "elements": 1999,
+    "price": 100.00
+  }],
+  "rentTime": 14,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-26T150424.200.json
+
+###
+
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    },
+    {
+      "id": 2,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 3,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 4,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 5,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    }
+  ],
+  "rentTime": 14,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-26T150416.200.json
+
+###
+
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    },
+    {
+      "id": 2,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    }
+  ],
+  "rentTime": 21,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-26T150410.200.json
+
+###
+
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    }
+  ],
+  "rentTime": 7,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-26T150400.200.json
+
+###
+
+GET http://localhost:8080/shop/products/
+
+<> 2023-05-26T150346.200.json
+
+###
+
+GET http://localhost:8080/shop/products/1
+
+<> 2023-05-26T150342.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-26T150338.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-26T150336.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-26T150335.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-26T150334.200.json
+
+###
+
+PUT http://localhost:8080/shop/products/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 100.00
+}
+
+<> 2023-05-26T150326.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-26T150322.200.json
+
+###
+
+GET http://localhost:8080/shop/users/email/john.doe@gmail.com
+
+<> f-2.txt
+
+###
+
+GET http://localhost:8080/shop/users/greaterThan/20
+
+<> 2023-05-26T150253.200.json
+
+###
+
+GET http://localhost:8080/shop/users/1
+
+<> 2023-05-26T150248.200.json
+
+###
+
+GET http://localhost:8080/shop/users/
+
+<> 2023-05-26T150243.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John3",
+  "lastName": "Doe3",
+  "age": 26,
+  "email": "john3.doe@gmail.com",
+  "password": "John3"
+}
+
+<> 2023-05-26T150241.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John2",
+  "lastName": "Doe2",
+  "age": 21,
+  "email": "john2.doe@gmail.com",
+  "password": "John2"
+}
+
+<> 2023-05-26T150238.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 18,
+  "email": "john.doe@gmail.com",
+  "password": "John1"
+}
+
+<> 2023-05-26T150236.200.json
+
+###
+
+GET http://localhost:8080/shop/users/email/john.doe@gmail.com
+
+<> f-1.txt
+
+###
+
+GET http://localhost:8080/shop/users/email/john.doe@gmail.com
+
+<> f.txt
+
+###
+
+GET http://localhost:8080/shop/users/greaterThan/20
+
+<> 2023-05-26T150030.200.json
+
+###
+
+GET http://localhost:8080/shop/users/1
+
+<> 2023-05-26T145636.200.json
+
+###
+
+GET http://localhost:8080/shop/users/
+
+<> 2023-05-26T145632.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John3",
+  "lastName": "Doe3",
+  "age": 26,
+  "email": "john3.doe@gmail.com",
+  "password": "John3"
+}
+
+<> 2023-05-26T145611.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John2",
+  "lastName": "Doe2",
+  "age": 21,
+  "email": "john2.doe@gmail.com",
+  "password": "John2"
+}
+
+<> 2023-05-26T145608.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 18,
+  "email": "john.doe@gmail.com",
+  "password": "John1"
+}
+
+<> 2023-05-26T145555.200.json
+
+###
+
+GET http://localhost:8080/shop/orders/sorted?sort=rentTime,DESC
+
+<> 2023-05-25T195514.200.json
+
+###
+
+GET http://localhost:8080/shop/orders/
+
+<> 2023-05-25T195508.200.json
+
+###
+
+GET http://localhost:8080/shop/orders/2
+
+<> 2023-05-25T195502.200.json
+
+###
+
+PUT http://localhost:8080/shop/orders/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [{
+    "id": 1,
+    "categoryDTO": {
+      "type": "TECHNIC"
+    },
+    "number": "42199",
+    "elements": 1999,
+    "price": 100.00
+  }],
+  "rentTime": 14,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-25T195454.200.json
+
+###
+
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    },
+    {
+      "id": 2,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 3,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 4,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    },
+    {
+      "id": 5,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    }
+  ],
+  "rentTime": 14,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-25T195449.200.json
+
+###
+
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    },
+    {
+      "id": 2,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 199.99
+    }
+  ],
+  "rentTime": 21,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-25T195444.200.json
+
+###
+
+POST http://localhost:8080/shop/orders
+Content-Type: application/json
+
+{
+  "userDTO": {
+    "email": "john.doe@gmail.com"
+  },
+  "productDTOList": [
+    {
+      "id": 1,
+      "categoryDTO": {
+        "type": "TECHNIC"
+      },
+      "number": "42199",
+      "elements": 1999,
+      "price": 100.00
+    }
+  ],
+  "rentTime": 7,
+  "deliveryDTO": {
+    "id": 1,
+    "type": "POST"
+  },
+  "paymentDTO": {
+    "id": 1,
+    "type": "CARD"
+  }
+}
+
+<> 2023-05-25T195440.200.json
+
+###
+
+GET http://localhost:8080/shop/products/
+
+<> 2023-05-25T195431.200.json
+
+###
+
+GET http://localhost:8080/shop/products/1
+
+<> 2023-05-25T195422.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-25T195417.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-25T195416.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-25T195414.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-25T195413.200.json
+
+###
+
+PUT http://localhost:8080/shop/products/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 100.00
+}
+
+<> 2023-05-25T195406.200.json
+
+###
+
+POST http://localhost:8080/shop/products
+Content-Type: application/json
+
+{
+  "categoryDTO": {
+    "type": "TECHNIC"
+  },
+  "number": "42199",
+  "elements": 1999,
+  "price": 199.99
+}
+
+<> 2023-05-25T195401.200.json
+
+###
+
+GET http://localhost:8080/shop/users/greaterThan/20
+
+<> 2023-05-25T195353.200.json
+
+###
+
+GET http://localhost:8080/shop/users/1
+
+<> 2023-05-25T195342.200.json
+
+###
+
+GET http://localhost:8080/shop/users/
+
+<> 2023-05-25T195338.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John3",
+  "lastName": "Doe3",
+  "age": 26,
+  "email": "john3.doe@gmail.com",
+  "password": "John3"
+}
+
+<> 2023-05-25T195330.200.json
+
+###
+
+POST http://localhost:8080/shop/users
+Content-Type: application/json
+
+{
+  "firstName": "John2",
+  "lastName": "Doe2",
+  "age": 21,
+  "email": "john2.doe@gmail.com",
+  "password": "John2"
+}
+
+<> 2023-05-25T195325.200.json
+
+###
+

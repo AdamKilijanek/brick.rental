@@ -28,6 +28,7 @@ public class User {
     private int age;
     @NotBlank
     @Email
+    @Column(unique = true)
     private String email;
     @NotBlank
     private String password;
